@@ -6,23 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    .company-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px 0 8px 0;
+      text-align: center;
+    }
+    .company-logo {
+      height: 32px;
+      width: auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .company-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    .contact-row {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .pipe {
+      margin: 0 10px;
+      color: #888;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="biz-card">
     <img src="prophoto.png" alt="Profile Photo" class="profile-img"/>
     <h1>Sarfaraz Khan</h1>
     <h2>Marketing manager - @</h2>
-    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-      ISTOS MEDICAL PVT LTD
-      <img src="istos-logo.png" alt="ISTOS Logo" style="height: 24px; width: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"/>
-    </h3>
+
+    <div class="company-header">
+      <span class="company-name">ISTOS MEDICAL PVT LTD</span>
+      <img src="istos-logo.png" alt="ISTOS Logo" class="company-logo"/>
+    </div>
+
     <div class="card-details">
-      <table>
-        <tr>
-          <td>Email: <a href="mailto:s.khan@istos.in">s.khan@istos.in</a></td>
-          <td>Phone: <a href="tel:+919538262779">+91-9538262779</a></td>
-        </tr>
-      </table>
+      <div class="contact-row">
+        <span>Email: <a href="mailto:s.khan@istos.in">s.khan@istos.in</a></span>
+        <span class="pipe">|</span>
+        <span>Phone: <a href="tel:+919538262779">+91-9538262779</a></span>
+      </div>
       <p>Address: 51/5, Ground Floor, BSTN Heights, 2nd Cr J.C Industrial Area Bakasipura Mn Rd, Yelachenhalli Bangalore-560062, India</p>
     </div>
     <div class="social-links">
