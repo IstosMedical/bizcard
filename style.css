@@ -1,0 +1,86 @@
+body {
+  background: #f4f6fb;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.biz-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 24px rgba(32,16,66,.12);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+}
+.profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(130,82,245,0.15);
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 1.7rem;
+  margin: .25em 0 .1em 0;
+  font-weight: 700;
+  color: #7b2ff2;
+}
+h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #444;
+}
+.card-details p {
+  margin: 0.33em 0;
+  color: #555;
+  font-size: .98rem;
+}
+.social-links {
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+.social-links a {
+  text-decoration: none;
+  margin: 0 8px;
+  color: #fff;
+  display: inline-block;
+  background: linear-gradient(90deg,#a259ff 0,#7b2ff2 100%);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  line-height: 34px;
+  font-size: 1.2rem;
+  transition: transform .2s;
+}
+.social-links a:hover {
+  transform: scale(1.12) rotate(-7deg);
+  box-shadow: 0 3px 16px #7b2ff2a1;
+}
+#downloadBtn {
+  background: linear-gradient(90deg, #a259ff 0, #7b2ff2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.7em 2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: .7rem;
+  box-shadow: 0 2px 8px #7b2ff241;
+  transition: background .2s,transform .15s;
+}
+#downloadBtn:hover {
+  background: linear-gradient(90deg,#7b2ff2 0,#a259ff 100%);
+  transform: scale(1.06);
+}
+@media (max-width: 600px) {
+  body { padding: 1.2em; }
+  .biz-card { padding: 1.5em 1em; }
+}
