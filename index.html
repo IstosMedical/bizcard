@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Business Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <div class="biz-card">
+    <img src="image.jpg" alt="Profile Photo" class="profile-img"/>
+    <h1>Your Name</h1>
+    <h2>Role @ Company</h2>
+    <div class="card-details">
+      <p>Email: <a href="mailto:you@email.com">you@email.com</a></p>
+      <p>Phone: <a href="tel:+911234567890">+91-1234567890</a></p>
+      <p>Address: Bengaluru, India</p>
+    </div>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/yourhandle" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
+    <button id="downloadBtn">Download vCard</button>
+  </div>
+  <script>
+    // Basic downloadable vCard generator
+    document.getElementById('downloadBtn').onclick = function() {
+      let vCardData =
+`BEGIN:VCARD
+VERSION:3.0
+FN:Your Name
+ORG:Company
+TITLE:Role
+EMAIL:you@email.com
+TEL:+91-1234567890
+ADR:Bengaluru, India
+URL:https://linkedin.com/in/yourprofile
+END:VCARD`;
+      let blob = new Blob([vCardData], {type: 'text/vcard'});
+      let link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'businesscard.vcf';
+      link.click();
+    }
+  </script>
+</body>
+</html>
