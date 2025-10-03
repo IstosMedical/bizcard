@@ -1,3 +1,20 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Adjust spacing between logo and name as desired */
+  padding: 24px 0;
+  flex-direction: row;
+  text-align: center;
+}
+.logo {
+  height: 50px; /* or your desired height */
+}
+.company-name {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
 body {
   background: #f4f6fb;
   margin: 0;
