@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Digital Business Card</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
@@ -19,20 +18,9 @@
       height: 100vh;
     }
 
-    .wave-accent {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      width: 120px;
-      height: 60px;
-      background: linear-gradient(135deg, #7b2ff2, #a259ff);
-      border-bottom-left-radius: 60px;
-      z-index: 1;
-    }
-
     .biz-card {
-      background: #fff;
       position: relative;
+      background: #fff;
       border: 4px double #000;
       border-radius: 1.5rem;
       box-shadow: 0 6px 24px rgba(32, 16, 66, 0.12);
@@ -40,7 +28,18 @@
       text-align: center;
       max-width: 350px;
       width: 100%;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+    }
+
+    .wave-accent {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 50px;
+      background: linear-gradient(135deg, #7b2ff2, #a259ff);
+      border-bottom-left-radius: 50px;
+      z-index: 0;
     }
 
     .profile-img {
@@ -50,6 +49,8 @@
       object-fit: cover;
       margin-bottom: 1rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
 
     .profile-logo {
@@ -59,6 +60,8 @@
       width: auto;
       border-radius: 4px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -106,6 +109,10 @@
       padding-bottom: 10px;
     }
 
+    .contact-row div {
+      margin: 0.3rem 0;
+    }
+
     .pipe {
       margin: 0 10px;
       color: #888;
@@ -133,9 +140,9 @@
   </style>
 </head>
 <body>
-  <div class="wave-accent"></div>
-
   <div class="biz-card" id="card">
+    <div class="wave-accent"></div>
+
     <img src="khan.png" alt="Profile Photo" class="profile-img" />
     <img src="istos-logo.png" alt="ISTOS Logo" class="profile-logo" />
 
@@ -144,17 +151,15 @@
 
     <div class="company-header">
       <span class="company-name">ISTOS MEDICAL PVT LTD</span>
-      </div>
+      <img src="istos-logo.png" alt="ISTOS Logo" class="company-logo" />
+    </div>
 
     <div class="card-details">
-    <div class="contact-row">
-      <div>
-        📧: <a href="mailto:s.khan@istos.in">s.khan@istos.in</a>
+      <div class="contact-row">
+        <div>📧: <a href="mailto:s.khan@istos.in">s.khan@istos.in</a></div>
+        <div>📞: <a href="tel:+919538262779">+91-9538262779</a></div>
       </div>
-      <div style="margin-top: 0.5rem;">
-        📞: <a href="tel:+919538262779">+91-9538262779</a>
-      </div>
-    </div>
+
       <p>
         Address: 51/5, Ground Floor, BSTN Heights, 2nd Cr J.C Industrial Area,<br />
         Bakasipura Mn Rd, Yelachenhalli, Bangalore-560062, India
