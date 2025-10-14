@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
   <style>
 
      .profile-img {
@@ -109,24 +111,7 @@
     <button id="downloadBtn">Download vCard</button>
   </div>
 
-  <script>
-    // Basic downloadable vCard generator
-    document.getElementById('downloadBtn').onclick = function () {
-      let vCardData = `BEGIN:VCARD
-VERSION:3.0
-FN:Sarfaraz Khan
-ORG:ISTOS MEDICAL PVT LTD
-TITLE:Marketing Manager
-EMAIL:s.khan@istos.in
-TEL:+91-9538262779
-ADR:51/5, Ground Floor, BSTN Heights, Bangalore, India
-END:VCARD`;
-      let blob = new Blob([vCardData], { type: 'text/vcard' });
-      let link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = 'sarfaraz-khan.vcf';
-      link.click();
-    };
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 </body>
 
