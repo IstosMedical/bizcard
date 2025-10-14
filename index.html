@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Digital Business Card</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-     .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    .profile-logo {
-      display: block;
-      margin: 0 auto 1rem auto;
-      height: 40px;
-      width: auto;
-      border-radius: 4px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    
     .biz-card {
       background: #fff;
-      border: 4px double #000; /* black double border */
+      border: 4px double #000;
       border-radius: 1.5rem;
       box-shadow: 0 6px 24px rgba(32, 16, 66, 0.12);
       padding: 2rem 2.5rem;
@@ -39,16 +30,17 @@
       width: 100%;
       transition: box-shadow 0.3s ease, border-color 0.3s ease;
     }
-    .company-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 16px 0 8px 0;
-      text-align: center;
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    
-     .profile-logo {
+
+    .profile-logo {
       display: block;
       margin: 0 auto 1rem auto;
       height: 40px;
@@ -57,34 +49,80 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
+    h1 {
+      font-size: 1.7rem;
+      margin: 0.25em 0 0.1em 0;
+      font-weight: 700;
+      color: #7b2ff2;
+    }
+
+    h2 {
+      margin: 0 0 1rem 0;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #444;
+    }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px 0 8px 0;
+    }
+
     .company-logo {
       height: 32px;
       width: auto;
       border-radius: 4px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
+
     .company-name {
       font-size: 1.2em;
       font-weight: bold;
       letter-spacing: 1px;
       margin: 0;
     }
+
+    .card-details {
+      padding-top: 1rem;
+    }
+
     .contact-row {
       text-align: center;
       padding-bottom: 10px;
     }
+
     .pipe {
       margin: 0 10px;
       color: #888;
       font-weight: bold;
     }
+
+    #downloadBtn {
+      background: linear-gradient(90deg, #a259ff 0, #7b2ff2 100%);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.7em 2em;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      box-shadow: 0 2px 8px #7b2ff241;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    #downloadBtn:hover {
+      background: linear-gradient(90deg, #7b2ff2 0, #a259ff 100%);
+      transform: scale(1.06);
+    }
   </style>
 </head>
 <body>
-  <div class="biz-card">
+  <div class="biz-card" id="card">
     <img src="khan.png" alt="Profile Photo" class="profile-img" />
-
-    <!-- Add this logo below the profile photo -->
     <img src="istos-logo.png" alt="ISTOS Logo" class="profile-logo" />
 
     <h1>Sarfaraz Khan</h1>
@@ -108,10 +146,18 @@
       </p>
     </div>
 
-    <button id="downloadBtn">Download vCard</button>
+    <button id="downloadBtn">Download Snapshot</button>
   </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
+  <script>
+    document.getElementById('downloadBtn').onclick = function () {
+      html2canvas(document.getElementById('card')).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'sarfaraz-khan-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    };
+  </script>
 </body>
-
+</html>
