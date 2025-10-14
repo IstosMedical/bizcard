@@ -34,6 +34,15 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.profile-logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 .biz-card {
   background: #fff;
   border: 4px double #000; /* black double border */
