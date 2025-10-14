@@ -19,8 +19,20 @@
       height: 100vh;
     }
 
+    .wave-accent {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 120px;
+      height: 60px;
+      background: linear-gradient(135deg, #7b2ff2, #a259ff);
+      border-bottom-left-radius: 60px;
+      z-index: 1;
+    }
+
     .biz-card {
       background: #fff;
+      position: relative;
       border: 4px double #000;
       border-radius: 1.5rem;
       box-shadow: 0 6px 24px rgba(32, 16, 66, 0.12);
@@ -121,6 +133,8 @@
   </style>
 </head>
 <body>
+  <div class="wave-accent"></div>
+
   <div class="biz-card" id="card">
     <img src="khan.png" alt="Profile Photo" class="profile-img" />
     <img src="istos-logo.png" alt="ISTOS Logo" class="profile-logo" />
