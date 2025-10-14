@@ -40,13 +40,13 @@
 </head>
 <body>
   <div class="biz-card">
-    <img src="khan.png" alt="Profile Photo" class="profile-img"/>
+    <img src="khan.png" alt="Profile Photo" class="profile-img" />
     <h1>Sarfaraz Khan</h1>
-    <h2>Marketing manager</h2>
+    <h2>Marketing Manager</h2>
 
     <div class="company-header">
       <span class="company-name">ISTOS MEDICAL PVT LTD</span>
-      <img src="istos-logo.png" alt="ISTOS Logo" class="company-logo"/>
+      <img src="istos-logo.png" alt="ISTOS Logo" class="company-logo" />
     </div>
 
     <div class="card-details">
@@ -55,30 +55,34 @@
         <span class="pipe">|</span>
         <span>📞: <a href="tel:+919538262779">+91-9538262779</a></span>
       </div>
-      <p>Address: 51/5, Ground Floor, BSTN Heights, 2nd Cr J.C Industrial Area Bakasipura Mn Rd, Yelachenhalli Bangalore-560062, India</p>
+
+      <p>
+        Address: 51/5, Ground Floor, BSTN Heights, 2nd Cr J.C Industrial Area,<br />
+        Bakasipura Mn Rd, Yelachenhalli, Bangalore-560062, India
+      </p>
     </div>
+
     <button id="downloadBtn">Download vCard</button>
   </div>
+
   <script>
     // Basic downloadable vCard generator
-    document.getElementById('downloadBtn').onclick = function() {
-      let vCardData =
-`BEGIN:VCARD
+    document.getElementById('downloadBtn').onclick = function () {
+      let vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Your Name
-ORG:Company
-TITLE:Role
-EMAIL:you@email.com
-TEL:+91-1234567890
-ADR:Bengaluru, India
-URL:https://linkedin.com/in/yourprofile
+FN:Sarfaraz Khan
+ORG:ISTOS MEDICAL PVT LTD
+TITLE:Marketing Manager
+EMAIL:s.khan@istos.in
+TEL:+91-9538262779
+ADR:51/5, Ground Floor, BSTN Heights, Bangalore, India
 END:VCARD`;
-      let blob = new Blob([vCardData], {type: 'text/vcard'});
+      let blob = new Blob([vCardData], { type: 'text/vcard' });
       let link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.download = 'businesscard.vcf';
+      link.download = 'sarfaraz-khan.vcf';
       link.click();
-    }
+    };
   </script>
 </body>
-</html>
+
